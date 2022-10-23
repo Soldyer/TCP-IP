@@ -1,0 +1,1 @@
+Practical.o: ../Practical.c
