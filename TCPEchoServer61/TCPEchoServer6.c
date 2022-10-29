@@ -30,15 +30,15 @@ int main (int argc, char *argv[])
 
    // Create socket for incoming connections
    int servSock; // Socket descriptor for server
-   if ((servSock = socket (AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0)
+   if ((servSock = socket (AF_INET6, SOCK_STREAM, IPPROTO_TCP)) < 0)
       DieWithSystemMessage ("socket() failed");
 
    // Construct local address structure
-   struct sockaddr_in servAddr;                    // local address
-   memset (&servAddr, 0, sizeof(servAddr));         // zero out structure
-   servAddr.sin_family = AF_INET;                  // IPV4 address family
-   servAddr.sin_addr.s_addr = htonl (INADDR_ANY);   // Any incoming interface
-   servAddr.sin_port = htons (servPort);            // Local port
+   struct sockaddr_in6 servAddr;                // local address
+   memset (&servAddr, 0, sizeof(servAddr));     // zero out structure
+   servAddr.sin6_family = AF_INET6;             // IPV4 address family
+   servAddr.sin6_addr = in6addr_any;            // Any incoming interface
+   servAddr.sin6_port = htons (servPort);       // Local port
 
    // Bind to the local address
    if (bind (servSock, (struct sockaddr*) &servAddr, sizeof(servAddr)) < 0)
@@ -50,7 +50,7 @@ int main (int argc, char *argv[])
 
    for (;;) // Run forever
    {
-      struct sockaddr_in clntAddr;                 // Client address
+      struct sockaddr_in6 clntAddr;                 // Client address
       // Set lenght of client address structure (in-out) parameter
       socklen_t clntAddrLen = sizeof(clntAddr);
 
@@ -62,11 +62,11 @@ int main (int argc, char *argv[])
 
       // clntSock is conncted to a client!
 
-      char clntName[INET_ADDRSTRLEN];        // String to contain client address
-      if (inet_ntop (AF_INET, &clntAddr.sin_addr.s_addr, clntName,
+      char clntName[INET6_ADDRSTRLEN];        // String to contain client address
+      if (inet_ntop (AF_INET, &clntAddr.sin6_addr.__in6_u, clntName,
                      sizeof(clntName)) != NULL)
          printf ("Handling client %s/%d\n", clntName,
-                 ntohs (clntAddr.sin_port));
+                 ntohs (clntAddr.sin6_port));
       else
          puts ("Unable to get client address");
 

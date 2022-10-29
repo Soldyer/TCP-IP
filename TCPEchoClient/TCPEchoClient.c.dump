@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="Native" char_bit="8" short_bit="16" int_bit="32" long_bit="64" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="TCPEchoClient.c"/>
+    <file index="1" name="Practical.h"/>
+    <tok fileIndex="0" linenr="1" column="1" str="#"/>
+    <tok fileIndex="0" linenr="1" column="2" str="include"/>
+    <tok fileIndex="0" linenr="1" column="10" str="&lt;string.h&gt;"/>
+    <tok fileIndex="0" linenr="2" column="1" str="#"/>
+    <tok fileIndex="0" linenr="2" column="2" str="include"/>
+    <tok fileIndex="0" linenr="2" column="10" str="&lt;unistd.h&gt;"/>
+    <tok fileIndex="0" linenr="3" column="1" str="#"/>
+    <tok fileIndex="0" linenr="3" column="2" str="include"/>
+    <tok fileIndex="0" linenr="3" column="10" str="&lt;sys/types.h&gt;"/>
+    <tok fileIndex="0" linenr="4" column="1" str="#"/>
+    <tok fileIndex="0" linenr="4" column="2" str="include"/>
+    <tok fileIndex="0" linenr="4" column="10" str="&lt;sys/socket.h&gt;"/>
+    <tok fileIndex="0" linenr="5" column="1" str="#"/>
+    <tok fileIndex="0" linenr="5" column="2" str="include"/>
+    <tok fileIndex="0" linenr="5" column="10" str="&lt;netdb.h&gt;"/>
+    <tok fileIndex="0" linenr="6" column="1" str="#"/>
+    <tok fileIndex="0" linenr="6" column="2" str="include"/>
+    <tok fileIndex="0" linenr="6" column="10" str="&quot;Practical.h&quot;"/>
+    <tok fileIndex="0" linenr="8" column="1" str="int"/>
+    <tok fileIndex="0" linenr="8" column="5" str="SetupTCPClientSocket"/>
+    <tok fileIndex="0" linenr="8" column="25" str="("/>
+    <tok fileIndex="0" linenr="8" column="26" str="const"/>
+    <tok fileIndex="0" linenr="8" column="32" str="char"/>
+    <tok fileIndex="0" linenr="8" column="37" str="*"/>
+    <tok fileIndex="0" linenr="8" column="38" str="host"/>
+    <tok fileIndex="0" linenr="8" column="42" str=","/>
+    <tok fileIndex="0" linenr="8" column="44" str="const"/>
+    <tok fileIndex="0" linenr="8" column="50" str="char"/>
+    <tok fileIndex="0" linenr="8" column="55" str="*"/>
+    <tok fileIndex="0" linenr="8" column="56" str="service"/>
+    <tok fileIndex="0" linenr="8" column="63" str=")"/>
+    <tok fileIndex="0" linenr="9" column="1" str="{"/>
+    <tok fileIndex="0" linenr="10" column="4" str="// Tell the system what kind(s) of address info we want"/>
+    <tok fileIndex="0" linenr="11" column="4" str="struct"/>
+    <tok fileIndex="0" linenr="11" column="11" str="addrinfo"/>
+    <tok fileIndex="0" linenr="11" column="20" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="11" column="32" str=";"/>
+    <tok fileIndex="0" linenr="11" column="55" str="// Criteria for address match"/>
+    <tok fileIndex="0" linenr="12" column="4" str="memset"/>
+    <tok fileIndex="0" linenr="12" column="10" str="("/>
+    <tok fileIndex="0" linenr="12" column="11" str="&amp;"/>
+    <tok fileIndex="0" linenr="12" column="12" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="12" column="24" str=","/>
+    <tok fileIndex="0" linenr="12" column="26" str="0"/>
+    <tok fileIndex="0" linenr="12" column="27" str=","/>
+    <tok fileIndex="0" linenr="12" column="29" str="sizeof"/>
+    <tok fileIndex="0" linenr="12" column="35" str="("/>
+    <tok fileIndex="0" linenr="12" column="36" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="12" column="48" str=")"/>
+    <tok fileIndex="0" linenr="12" column="49" str=")"/>
+    <tok fileIndex="0" linenr="12" column="50" str=";"/>
+    <tok fileIndex="0" linenr="12" column="55" str="// Zero out structure"/>
+    <tok fileIndex="0" linenr="13" column="4" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="13" column="16" str="."/>
+    <tok fileIndex="0" linenr="13" column="17" str="ai_family"/>
+    <tok fileIndex="0" linenr="13" column="27" str="="/>
+    <tok fileIndex="0" linenr="13" column="29" str="AF_UNSPEC"/>
+    <tok fileIndex="0" linenr="13" column="38" str=";"/>
+    <tok fileIndex="0" linenr="13" column="55" str="// v4 or v6 is OK"/>
+    <tok fileIndex="0" linenr="14" column="4" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="14" column="16" str="."/>
+    <tok fileIndex="0" linenr="14" column="17" str="ai_socktype"/>
+    <tok fileIndex="0" linenr="14" column="29" str="="/>
+    <tok fileIndex="0" linenr="14" column="31" str="SOCK_STREAM"/>
+    <tok fileIndex="0" linenr="14" column="42" str=";"/>
+    <tok fileIndex="0" linenr="14" column="55" str="// Only streaming sockets"/>
+    <tok fileIndex="0" linenr="15" column="4" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="15" column="16" str="."/>
+    <tok fileIndex="0" linenr="15" column="17" str="ai_protocol"/>
+    <tok fileIndex="0" linenr="15" column="29" str="="/>
+    <tok fileIndex="0" linenr="15" column="31" str="IPPROTO_TCP"/>
+    <tok fileIndex="0" linenr="15" column="42" str=";"/>
+    <tok fileIndex="0" linenr="15" column="55" str="// Only TCP protocol"/>
+    <tok fileIndex="0" linenr="17" column="4" str="// Get address(es)"/>
+    <tok fileIndex="0" linenr="18" column="4" str="struct"/>
+    <tok fileIndex="0" linenr="18" column="11" str="addrinfo"/>
+    <tok fileIndex="0" linenr="18" column="20" str="*"/>
+    <tok fileIndex="0" linenr="18" column="21" str="servAddr"/>
+    <tok fileIndex="0" linenr="18" column="29" str=";"/>
+    <tok fileIndex="0" linenr="18" column="55" str="// Holder for returned list of server addrs"/>
+    <tok fileIndex="0" linenr="19" column="4" str="int"/>
+    <tok fileIndex="0" linenr="19" column="8" str="rtnVal"/>
+    <tok fileIndex="0" linenr="19" column="15" str="="/>
+    <tok fileIndex="0" linenr="19" column="17" str="getaddrinfo"/>
+    <tok fileIndex="0" linenr="19" column="28" str="("/>
+    <tok fileIndex="0" linenr="19" column="29" str="host"/>
+    <tok fileIndex="0" linenr="19" column="33" str=","/>
+    <tok fileIndex="0" linenr="19" column="35" str="service"/>
+    <tok fileIndex="0" linenr="19" column="42" str=","/>
+    <tok fileIndex="0" linenr="19" column="44" str="&amp;"/>
+    <tok fileIndex="0" linenr="19" column="45" str="addrCriteria"/>
+    <tok fileIndex="0" linenr="19" column="57" str=","/>
+    <tok fileIndex="0" linenr="19" column="59" str="&amp;"/>
+    <tok fileIndex="0" linenr="19" column="60" str="servAddr"/>
+    <tok fileIndex="0" linenr="19" column="68" str=")"/>
+    <tok fileIndex="0" linenr="19" column="69" str=";"/>
+    <tok fileIndex="0" linenr="20" column="4" str="if"/>
+    <tok fileIndex="0" linenr="20" column="7" str="("/>
+    <tok fileIndex="0" linenr="20" column="8" str="rtnVal"/>
+    <tok fileIndex="0" linenr="20" column="15" str="!="/>
+    <tok fileIndex="0" linenr="20" column="18" str="0"/>
+    <tok fileIndex="0" linenr="20" column="19" str=")"/>
+    <tok fileIndex="0" linenr="21" column="7" str="DieWithUserMessage"/>
+    <tok fileIndex="0" linenr="21" column="25" str="("/>
+    <tok fileIndex="0" linenr="21" column="26" str="&quot;getaddrinfo() failed&quot;"/>
+    <tok fileIndex="0" linenr="21" column="48" str=","/>
+    <tok fileIndex="0" linenr="21" column="50" str="gai_strerror"/>
+    <tok fileIndex="0" linenr="21" column="62" str="("/>
+    <tok fileIndex="0" linenr="21" column="63" str="rtnVal"/>
+    <tok fileIndex="0" linenr="21" column="69" str=")"/>
+    <tok fileIndex="0" linenr="21" column="70" str=")"/>
+    <tok fileIndex="0" linenr="21" column="71" str=";"/>
+    <tok fileIndex="0" linenr="23" column="4" str="int"/>
+    <tok fileIndex="0" linenr="23" column="8" str="sock"/>
+    <tok fileIndex="0" linenr="23" column="13" str="="/>
+    <tok fileIndex="0" linenr="23" column="15" str="-"/>
+    <tok fileIndex="0" linenr="23" column="16" str="1"/>
+    <tok fileIndex="0" linenr="23" column="17" str=";"/>
+    <tok fileIndex="0" linenr="24" column="4" str="for"/>
+    <tok fileIndex="0" linenr="24" column="8" str="("/>
+    <tok fileIndex="0" linenr="24" column="9" str="struct"/>
+    <tok fileIndex="0" linenr="24" column="16" str="addrinfo"/>
+    <tok fileIndex="0" linenr="24" column="25" str="*"/>
+    <tok fileIndex="0" linenr="24" column="26" str="addr"/>
+    <tok fileIndex="0" linenr="24" column="31" str="="/>
+    <tok fileIndex="0" linenr="24" column="33" str="servAddr"/>
+    <tok fileIndex="0" linenr="24" column="41" str=";"/>
+    <tok fileIndex="0" linenr="24" column="43" str="addr"/>
+    <tok fileIndex="0" linenr="24" column="48" str="!="/>
+    <tok fileIndex="0" linenr="24" column="51" str="NULL"/>
+    <tok fileIndex="0" linenr="24" column="55" str=";"/>
+    <tok fileIndex="0" linenr="24" column="57" str="addr"/>
+    <tok fileIndex="0" linenr="24" column="62" str="="/>
+    <tok fileIndex="0" linenr="24" column="64" str="addr"/>
+    <tok fileIndex="0" linenr="24" column="68" str="-&gt;"/>
+    <tok fileIndex="0" linenr="24" column="70" str="ai_next"/>
+    <tok fileIndex="0" linenr="24" column="77" str=")"/>
+    <tok fileIndex="0" linenr="25" column="4" str="{"/>
+    <tok fileIndex="0" linenr="26" column="7" str="// Create a reliable, stream socket using TCP"/>
+    <tok fileIndex="0" linenr="27" column="7" str="sock"/>
+    <tok fileIndex="0" linenr="27" column="12" str="="/>
+    <tok fileIndex="0" linenr="27" column="14" str="socket"/>
+    <tok fileIndex="0" linenr="27" column="20" str="("/>
+    <tok fileIndex="0" linenr="27" column="21" str="addr"/>
+    <tok fileIndex="0" linenr="27" column="25" str="-&gt;"/>
+    <tok fileIndex="0" linenr="27" column="27" str="ai_family"/>
+    <tok fileIndex="0" linenr="27" column="36" str=","/>
+    <tok fileIndex="0" linenr="27" column="38" str="addr"/>
+    <tok fileIndex="0" linenr="27" column="42" str="-&gt;"/>
+    <tok fileIndex="0" linenr="27" column="44" str="ai_socktype"/>
+    <tok fileIndex="0" linenr="27" column="55" str=","/>
+    <tok fileIndex="0" linenr="27" column="57" str="addr"/>
+    <tok fileIndex="0" linenr="27" column="61" str="-&gt;"/>
+    <tok fileIndex="0" linenr="27" column="63" str="ai_protocol"/>
+    <tok fileIndex="0" linenr="27" column="74" str=")"/>
+    <tok fileIndex="0" linenr="27" column="75" str=";"/>
+    <tok fileIndex="0" linenr="28" column="7" str="if"/>
+    <tok fileIndex="0" linenr="28" column="10" str="("/>
+    <tok fileIndex="0" linenr="28" column="11" str="sock"/>
+    <tok fileIndex="0" linenr="28" column="16" str="&lt;"/>
+    <tok fileIndex="0" linenr="28" column="18" str="0"/>
+    <tok fileIndex="0" linenr="28" column="19" str=")"/>
+    <tok fileIndex="0" linenr="29" column="10" str="continue"/>
+    <tok fileIndex="0" linenr="29" column="18" str=";"/>
+    <tok fileIndex="0" linenr="29" column="22" str="// Socket creation failed; try next address"/>
+    <tok fileIndex="0" linenr="31" column="7" str="// Establish the connection to the echo server"/>
+    <tok fileIndex="0" linenr="32" column="7" str="if"/>
+    <tok fileIndex="0" linenr="32" column="10" str="("/>
+    <tok fileIndex="0" linenr="32" column="11" str="connect"/>
+    <tok fileIndex="0" linenr="32" column="18" str="("/>
+    <tok fileIndex="0" linenr="32" column="19" str="sock"/>
+    <tok fileIndex="0" linenr="32" column="23" str=","/>
+    <tok fileIndex="0" linenr="32" column="25" str="addr"/>
+    <tok fileIndex="0" linenr="32" column="29" str="-&gt;"/>
+    <tok fileIndex="0" linenr="32" column="31" str="ai_addr"/>
+    <tok fileIndex="0" linenr="32" column="38" str=","/>
+    <tok fileIndex="0" linenr="32" column="40" str="addr"/>
+    <tok fileIndex="0" linenr="32" column="44" str="-&gt;"/>
+    <tok fileIndex="0" linenr="32" column="46" str="ai_addrlen"/>
+    <tok fileIndex="0" linenr="32" column="56" str=")"/>
+    <tok fileIndex="0" linenr="32" column="58" str="=="/>
+    <tok fileIndex="0" linenr="32" column="61" str="0"/>
+    <tok fileIndex="0" linenr="32" column="62" str=")"/>
+    <tok fileIndex="0" linenr="33" column="10" str="break"/>
+    <tok fileIndex="0" linenr="33" column="15" str=";"/>
+    <tok fileIndex="0" linenr="33" column="19" str="// Socket creation succeded; break and return socket"/>
+    <tok fileIndex="0" linenr="35" column="7" str="close"/>
+    <tok fileIndex="0" linenr="35" column="12" str="("/>
+    <tok fileIndex="0" linenr="35" column="13" str="sock"/>
+    <tok fileIndex="0" linenr="35" column="17" str=")"/>
+    <tok fileIndex="0" linenr="35" column="18" str=";"/>
+    <tok fileIndex="0" linenr="35" column="22" str="// Socket connection failed; try next address"/>
+    <tok fileIndex="0" linenr="36" column="7" str="sock"/>
+    <tok fileIndex="0" linenr="36" column="12" str="="/>
+    <tok fileIndex="0" linenr="36" column="14" str="-"/>
+    <tok fileIndex="0" linenr="36" column="15" str="1"/>
+    <tok fileIndex="0" linenr="36" column="16" str=";"/>
+    <tok fileIndex="0" linenr="37" column="4" str="}"/>
+    <tok fileIndex="0" linenr="39" column="4" str="freeaddrinfo"/>
+    <tok fileIndex="0" linenr="39" column="16" str="("/>
+    <tok fileIndex="0" linenr="39" column="17" str="servAddr"/>
+    <tok fileIndex="0" linenr="39" column="25" str=")"/>
+    <tok fileIndex="0" linenr="39" column="26" str=";"/>
+    <tok fileIndex="0" linenr="39" column="28" str="// Free addrinfo allocated in getaddrinfo()"/>
+    <tok fileIndex="0" linenr="40" column="4" str="return"/>
+    <tok fileIndex="0" linenr="40" column="11" str="sock"/>
+    <tok fileIndex="0" linenr="40" column="15" str=";"/>
+    <tok fileIndex="0" linenr="41" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="TCPEchoClient.c" linenr="1" str="#include &lt;string.h&gt;"/>
+    <directive file="TCPEchoClient.c" linenr="2" str="#include &lt;unistd.h&gt;"/>
+    <directive file="TCPEchoClient.c" linenr="3" str="#include &lt;sys/types.h&gt;"/>
+    <directive file="TCPEchoClient.c" linenr="4" str="#include &lt;sys/socket.h&gt;"/>
+    <directive file="TCPEchoClient.c" linenr="5" str="#include &lt;netdb.h&gt;"/>
+    <directive file="TCPEchoClient.c" linenr="6" str="#include &quot;Practical.h&quot;"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0x560860edd8e0" file="Practical.h" linenr="1" column="1" str="void" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860edd850" file="Practical.h" linenr="1" column="6" str="DieWithUserMessage" scope="0x560860ed76f0" type="name" function="0x560860edcfe0"/>
+    <token id="0x560860edd7f0" file="Practical.h" linenr="1" column="24" str="(" scope="0x560860ed76f0" link="0x560860ed90e0" valueType-type="void" valueType-reference="None"/>
+    <token id="0x560860edd790" file="Practical.h" linenr="1" column="25" str="const" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860edd730" file="Practical.h" linenr="1" column="31" str="char" scope="0x560860ed76f0" type="name" astParent="0x560860eebae0"/>
+    <token id="0x560860eebae0" file="Practical.h" linenr="1" column="36" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astParent="0x560860eeccf0" astOperand1="0x560860edd730" astOperand2="0x560860eebe50"/>
+    <token id="0x560860eebe50" file="Practical.h" linenr="1" column="37" str="msg" scope="0x560860ed76f0" type="name" varId="1" variable="0x560860ed9960" astParent="0x560860eebae0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860eeccf0" file="Practical.h" linenr="1" column="40" str="," scope="0x560860ed76f0" astOperand1="0x560860eebae0" astOperand2="0x560860ed41d0"/>
+    <token id="0x560860ed8e20" file="Practical.h" linenr="1" column="42" str="const" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860ed8f10" file="Practical.h" linenr="1" column="48" str="char" scope="0x560860ed76f0" type="name" astParent="0x560860ed41d0"/>
+    <token id="0x560860ed41d0" file="Practical.h" linenr="1" column="53" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astParent="0x560860eeccf0" astOperand1="0x560860ed8f10" astOperand2="0x560860ed4230"/>
+    <token id="0x560860ed4230" file="Practical.h" linenr="1" column="54" str="detail" scope="0x560860ed76f0" type="name" varId="2" variable="0x560860ed9a40" astParent="0x560860ed41d0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860ed90e0" file="Practical.h" linenr="1" column="60" str=")" scope="0x560860ed76f0" link="0x560860edd7f0"/>
+    <token id="0x560860ed8b50" file="Practical.h" linenr="1" column="61" str=";" scope="0x560860ed76f0"/>
+    <token id="0x560860ed8c40" file="Practical.h" linenr="2" column="1" str="void" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860ed8ca0" file="Practical.h" linenr="2" column="6" str="DieWithSystemMessage" scope="0x560860ed76f0" type="name" function="0x560860edcf30"/>
+    <token id="0x560860ed8970" file="Practical.h" linenr="2" column="26" str="(" scope="0x560860ed76f0" link="0x560860edb620" valueType-type="void" valueType-reference="None"/>
+    <token id="0x560860edb230" file="Practical.h" linenr="2" column="27" str="const" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860edb320" file="Practical.h" linenr="2" column="33" str="char" scope="0x560860ed76f0" type="name" astParent="0x560860edb410"/>
+    <token id="0x560860edb410" file="Practical.h" linenr="2" column="38" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astOperand1="0x560860edb320" astOperand2="0x560860edb530"/>
+    <token id="0x560860edb530" file="Practical.h" linenr="2" column="39" str="msg" scope="0x560860ed76f0" type="name" varId="3" variable="0x560860ed9b20" astParent="0x560860edb410" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860edb620" file="Practical.h" linenr="2" column="42" str=")" scope="0x560860ed76f0" link="0x560860ed8970"/>
+    <token id="0x560860edb680" file="Practical.h" linenr="2" column="43" str=";" scope="0x560860ed76f0"/>
+    <token id="0x560860eda990" file="Practical.h" linenr="3" column="1" str="void" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860eda600" file="Practical.h" linenr="3" column="6" str="PrintSocketAddress" scope="0x560860ed76f0" type="name" function="0x560860edd230"/>
+    <token id="0x560860eda6f0" file="Practical.h" linenr="3" column="24" str="(" scope="0x560860ed76f0" link="0x560860edee00" valueType-type="void" valueType-reference="None"/>
+    <token id="0x560860eda7e0" file="Practical.h" linenr="3" column="25" str="const" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860ede890" file="Practical.h" linenr="3" column="31" str="struct" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860ede8f0" file="Practical.h" linenr="3" column="38" str="sockaddr" scope="0x560860ed76f0" type="name" astParent="0x560860ede9e0"/>
+    <token id="0x560860ede9e0" file="Practical.h" linenr="3" column="47" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astParent="0x560860edea40" astOperand1="0x560860ede8f0" astOperand2="0x560860edb0e0"/>
+    <token id="0x560860edb0e0" file="Practical.h" linenr="3" column="48" str="address" scope="0x560860ed76f0" type="name" varId="4" variable="0x560860ed9c00" astParent="0x560860ede9e0" valueType-type="record" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860edea40" file="Practical.h" linenr="3" column="55" str="," scope="0x560860ed76f0" astOperand1="0x560860ede9e0" astOperand2="0x560860edec20"/>
+    <token id="0x560860edeb30" file="Practical.h" linenr="3" column="57" str="FILE" scope="0x560860ed76f0" type="name" astParent="0x560860edec20"/>
+    <token id="0x560860edec20" file="Practical.h" linenr="3" column="62" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astParent="0x560860edea40" astOperand1="0x560860edeb30" astOperand2="0x560860eded10"/>
+    <token id="0x560860eded10" file="Practical.h" linenr="3" column="63" str="stream" scope="0x560860ed76f0" type="name" varId="5" variable="0x560860ed9ce0" astParent="0x560860edec20"/>
+    <token id="0x560860edee00" file="Practical.h" linenr="3" column="69" str=")" scope="0x560860ed76f0" link="0x560860eda6f0"/>
+    <token id="0x560860edee60" file="Practical.h" linenr="3" column="70" str=";" scope="0x560860ed76f0"/>
+    <token id="0x560860edef50" file="TCPEchoClient.c" linenr="8" column="1" str="int" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860edf040" file="TCPEchoClient.c" linenr="8" column="5" str="SetupTCPClientSocket" scope="0x560860ed76f0" type="name" function="0x560860edd180"/>
+    <token id="0x560860edf0a0" file="TCPEchoClient.c" linenr="8" column="25" str="(" scope="0x560860ed76f0" link="0x560860edac90" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860edf1c0" file="TCPEchoClient.c" linenr="8" column="26" str="const" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860edaf00" file="TCPEchoClient.c" linenr="8" column="32" str="char" scope="0x560860ed76f0" type="name" astParent="0x560860edf2b0"/>
+    <token id="0x560860edf2b0" file="TCPEchoClient.c" linenr="8" column="37" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astParent="0x560860edf400" astOperand1="0x560860edaf00" astOperand2="0x560860edf3a0"/>
+    <token id="0x560860edf3a0" file="TCPEchoClient.c" linenr="8" column="38" str="host" scope="0x560860ed76f0" type="name" varId="6" variable="0x560860ed9dc0" astParent="0x560860edf2b0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860edf400" file="TCPEchoClient.c" linenr="8" column="42" str="," scope="0x560860ed76f0" astOperand1="0x560860edf2b0" astOperand2="0x560860edf640"/>
+    <token id="0x560860edf4f0" file="TCPEchoClient.c" linenr="8" column="44" str="const" scope="0x560860ed76f0" type="name"/>
+    <token id="0x560860edf5e0" file="TCPEchoClient.c" linenr="8" column="50" str="char" scope="0x560860ed76f0" type="name" astParent="0x560860edf640"/>
+    <token id="0x560860edf640" file="TCPEchoClient.c" linenr="8" column="55" str="*" scope="0x560860ed76f0" type="op" isArithmeticalOp="true" astParent="0x560860edf400" astOperand1="0x560860edf5e0" astOperand2="0x560860edf740"/>
+    <token id="0x560860edf740" file="TCPEchoClient.c" linenr="8" column="56" str="service" scope="0x560860ed76f0" type="name" varId="7" variable="0x560860ed9ea0" astParent="0x560860edf640" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860edac90" file="TCPEchoClient.c" linenr="8" column="63" str=")" scope="0x560860ed76f0" link="0x560860edf0a0"/>
+    <token id="0x560860edf830" file="TCPEchoClient.c" linenr="9" column="1" str="{" scope="0x560860ed7880" link="0x560860ee67f0"/>
+    <token id="0x560860edf920" file="TCPEchoClient.c" linenr="11" column="4" str="struct" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860edf980" file="TCPEchoClient.c" linenr="11" column="11" str="addrinfo" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860edfa70" file="TCPEchoClient.c" linenr="11" column="20" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860edfb60" file="TCPEchoClient.c" linenr="11" column="32" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860edfbc0" file="TCPEchoClient.c" linenr="12" column="4" str="memset" scope="0x560860ed7880" type="name" astParent="0x560860edfcc0"/>
+    <token id="0x560860edfcc0" file="TCPEchoClient.c" linenr="12" column="10" str="(" scope="0x560860ed7880" link="0x560860ee0330" astOperand1="0x560860edfbc0" astOperand2="0x560860edfff0" valueType-type="void" valueType-pointer="1" valueType-reference="None" valueType-originalTypeName="void *"/>
+    <token id="0x560860ed7010" file="TCPEchoClient.c" linenr="12" column="11" str="&amp;" scope="0x560860ed7880" type="op" values="0x560860ef8970" astParent="0x560860edfea0" astOperand1="0x560860edfdb0" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860edfdb0" file="TCPEchoClient.c" linenr="12" column="12" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" astParent="0x560860ed7010" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860edfea0" file="TCPEchoClient.c" linenr="12" column="24" str="," scope="0x560860ed7880" astParent="0x560860edfff0" astOperand1="0x560860ed7010" astOperand2="0x560860edff00"/>
+    <token id="0x560860edff00" file="TCPEchoClient.c" linenr="12" column="26" str="0" scope="0x560860ed7880" type="number" isInt="true" values="0x560860ef6d60" astParent="0x560860edfea0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860edfff0" file="TCPEchoClient.c" linenr="12" column="27" str="," scope="0x560860ed7880" astParent="0x560860edfcc0" astOperand1="0x560860edfea0" astOperand2="0x560860ee0140"/>
+    <token id="0x560860ee00e0" file="TCPEchoClient.c" linenr="12" column="29" str="sizeof" scope="0x560860ed7880" type="name" astParent="0x560860ee0140"/>
+    <token id="0x560860ee0140" file="TCPEchoClient.c" linenr="12" column="35" str="(" scope="0x560860ed7880" link="0x560860ed6da0" values="0x560860ed93d0" astParent="0x560860edfff0" astOperand1="0x560860ee00e0" astOperand2="0x560860ee0240" valueType-type="long" valueType-sign="unsigned" valueType-reference="None" valueType-originalTypeName="size_t"/>
+    <token id="0x560860ee0240" file="TCPEchoClient.c" linenr="12" column="36" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" astParent="0x560860ee0140" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860ed6da0" file="TCPEchoClient.c" linenr="12" column="48" str=")" scope="0x560860ed7880" link="0x560860ee0140"/>
+    <token id="0x560860ee0330" file="TCPEchoClient.c" linenr="12" column="49" str=")" scope="0x560860ed7880" link="0x560860edfcc0"/>
+    <token id="0x560860ee0420" file="TCPEchoClient.c" linenr="12" column="50" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee0480" file="TCPEchoClient.c" linenr="13" column="4" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" astParent="0x560860ee0570" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860ee0570" file="TCPEchoClient.c" linenr="13" column="16" str="." scope="0x560860ed7880" astParent="0x560860ee06c0" astOperand1="0x560860ee0480" astOperand2="0x560860ee0660"/>
+    <token id="0x560860ee0660" file="TCPEchoClient.c" linenr="13" column="17" str="ai_family" scope="0x560860ed7880" type="name" varId="9" astParent="0x560860ee0570"/>
+    <token id="0x560860ee06c0" file="TCPEchoClient.c" linenr="13" column="27" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" astOperand1="0x560860ee0570" astOperand2="0x560860ee07c0"/>
+    <token id="0x560860ee07c0" file="TCPEchoClient.c" linenr="13" column="29" str="AF_UNSPEC" scope="0x560860ed7880" type="name" astParent="0x560860ee06c0"/>
+    <token id="0x560860ee0820" file="TCPEchoClient.c" linenr="13" column="38" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee0920" file="TCPEchoClient.c" linenr="14" column="4" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" astParent="0x560860ed5e50" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860ed5e50" file="TCPEchoClient.c" linenr="14" column="16" str="." scope="0x560860ed7880" astParent="0x560860ee0aa0" astOperand1="0x560860ee0920" astOperand2="0x560860ed5eb0"/>
+    <token id="0x560860ed5eb0" file="TCPEchoClient.c" linenr="14" column="17" str="ai_socktype" scope="0x560860ed7880" type="name" varId="10" astParent="0x560860ed5e50"/>
+    <token id="0x560860ee0aa0" file="TCPEchoClient.c" linenr="14" column="29" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" astOperand1="0x560860ed5e50" astOperand2="0x560860ee0b90"/>
+    <token id="0x560860ee0b90" file="TCPEchoClient.c" linenr="14" column="31" str="SOCK_STREAM" scope="0x560860ed7880" type="name" astParent="0x560860ee0aa0"/>
+    <token id="0x560860ee0c90" file="TCPEchoClient.c" linenr="14" column="42" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee0cf0" file="TCPEchoClient.c" linenr="15" column="4" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" astParent="0x560860ee0df0" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860ee0df0" file="TCPEchoClient.c" linenr="15" column="16" str="." scope="0x560860ed7880" astParent="0x560860ee0f50" astOperand1="0x560860ee0cf0" astOperand2="0x560860ee0e50"/>
+    <token id="0x560860ee0e50" file="TCPEchoClient.c" linenr="15" column="17" str="ai_protocol" scope="0x560860ed7880" type="name" varId="11" astParent="0x560860ee0df0"/>
+    <token id="0x560860ee0f50" file="TCPEchoClient.c" linenr="15" column="29" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" astOperand1="0x560860ee0df0" astOperand2="0x560860ee0fb0"/>
+    <token id="0x560860ee0fb0" file="TCPEchoClient.c" linenr="15" column="31" str="IPPROTO_TCP" scope="0x560860ed7880" type="name" astParent="0x560860ee0f50"/>
+    <token id="0x560860ee10b0" file="TCPEchoClient.c" linenr="15" column="42" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ed51e0" file="TCPEchoClient.c" linenr="18" column="4" str="struct" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860ed5240" file="TCPEchoClient.c" linenr="18" column="11" str="addrinfo" scope="0x560860ed7880" type="name" astParent="0x560860ee1230"/>
+    <token id="0x560860ee1230" file="TCPEchoClient.c" linenr="18" column="20" str="*" scope="0x560860ed7880" type="op" isArithmeticalOp="true" astOperand1="0x560860ed5240" astOperand2="0x560860ee1320"/>
+    <token id="0x560860ee1320" file="TCPEchoClient.c" linenr="18" column="21" str="servAddr" scope="0x560860ed7880" type="name" varId="12" variable="0x560860ed81d0" astParent="0x560860ee1230" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee1420" file="TCPEchoClient.c" linenr="18" column="29" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee1480" file="TCPEchoClient.c" linenr="19" column="4" str="int" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860ee1580" file="TCPEchoClient.c" linenr="19" column="8" str="rtnVal" scope="0x560860ed7880" type="name" varId="13" variable="0x560860ed82b0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee15e0" file="TCPEchoClient.c" linenr="19" column="15" str=";" scope="0x560860ed7880" isSplittedVarDeclEq="true"/>
+    <token id="0x560860ed65f0" file="TCPEchoClient.c" linenr="19" column="8" str="rtnVal" scope="0x560860ed7880" type="name" varId="13" variable="0x560860ed82b0" astParent="0x560860ed70d0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ed70d0" file="TCPEchoClient.c" linenr="19" column="15" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" astOperand1="0x560860ed65f0" astOperand2="0x560860ee1740" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee16e0" file="TCPEchoClient.c" linenr="19" column="17" str="getaddrinfo" scope="0x560860ed7880" type="name" astParent="0x560860ee1740"/>
+    <token id="0x560860ee1740" file="TCPEchoClient.c" linenr="19" column="28" str="(" scope="0x560860ed7880" link="0x560860ee1e70" astParent="0x560860ed70d0" astOperand1="0x560860ee16e0" astOperand2="0x560860ee1c10"/>
+    <token id="0x560860ee1840" file="TCPEchoClient.c" linenr="19" column="29" str="host" scope="0x560860ed7880" type="name" varId="6" variable="0x560860ed9dc0" astParent="0x560860ed4ec0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860ed4ec0" file="TCPEchoClient.c" linenr="19" column="33" str="," scope="0x560860ed7880" astParent="0x560860ee19c0" astOperand1="0x560860ee1840" astOperand2="0x560860ed4f20"/>
+    <token id="0x560860ed4f20" file="TCPEchoClient.c" linenr="19" column="35" str="service" scope="0x560860ed7880" type="name" varId="7" variable="0x560860ed9ea0" astParent="0x560860ed4ec0" valueType-type="char" valueType-sign="signed" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860ee19c0" file="TCPEchoClient.c" linenr="19" column="42" str="," scope="0x560860ed7880" astParent="0x560860ee1c10" astOperand1="0x560860ed4ec0" astOperand2="0x560860ee1ab0"/>
+    <token id="0x560860ee1ab0" file="TCPEchoClient.c" linenr="19" column="44" str="&amp;" scope="0x560860ed7880" type="op" values="0x560860ed9140" astParent="0x560860ee19c0" astOperand1="0x560860ee1bb0" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee1bb0" file="TCPEchoClient.c" linenr="19" column="45" str="addrCriteria" scope="0x560860ed7880" type="name" varId="8" variable="0x560860ed80f0" astParent="0x560860ee1ab0" valueType-type="record" valueType-reference="None"/>
+    <token id="0x560860ee1c10" file="TCPEchoClient.c" linenr="19" column="57" str="," scope="0x560860ed7880" astParent="0x560860ee1740" astOperand1="0x560860ee19c0" astOperand2="0x560860ee1d10"/>
+    <token id="0x560860ee1d10" file="TCPEchoClient.c" linenr="19" column="59" str="&amp;" scope="0x560860ed7880" type="op" values="0x560860eec8b0" astParent="0x560860ee1c10" astOperand1="0x560860ee1d70" valueType-type="record" valueType-pointer="2" valueType-reference="None"/>
+    <token id="0x560860ee1d70" file="TCPEchoClient.c" linenr="19" column="60" str="servAddr" scope="0x560860ed7880" type="name" varId="12" variable="0x560860ed81d0" values="0x560860ed9790" astParent="0x560860ee1d10" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee1e70" file="TCPEchoClient.c" linenr="19" column="68" str=")" scope="0x560860ed7880" link="0x560860ee1740"/>
+    <token id="0x560860ee1ed0" file="TCPEchoClient.c" linenr="19" column="69" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee1fd0" file="TCPEchoClient.c" linenr="20" column="4" str="if" scope="0x560860ed7880" type="name" astParent="0x560860ed4580"/>
+    <token id="0x560860ed4580" file="TCPEchoClient.c" linenr="20" column="7" str="(" scope="0x560860ed7880" link="0x560860ee2340" astOperand1="0x560860ee1fd0" astOperand2="0x560860ee2150"/>
+    <token id="0x560860ed45e0" file="TCPEchoClient.c" linenr="20" column="8" str="rtnVal" scope="0x560860ed7880" type="name" varId="13" variable="0x560860ed82b0" astParent="0x560860ee2150" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee2150" file="TCPEchoClient.c" linenr="20" column="15" str="!=" scope="0x560860ed7880" type="op" isComparisonOp="true" astParent="0x560860ed4580" astOperand1="0x560860ed45e0" astOperand2="0x560860ee2240" valueType-type="bool" valueType-reference="None"/>
+    <token id="0x560860ee2240" file="TCPEchoClient.c" linenr="20" column="18" str="0" scope="0x560860ed7880" type="number" isInt="true" values="0x560860ef6f10" astParent="0x560860ee2150" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee2340" file="TCPEchoClient.c" linenr="20" column="19" str=")" scope="0x560860ed7880" link="0x560860ed4580"/>
+    <token id="0x560860ee5fb0" file="TCPEchoClient.c" linenr="20" column="0" str="{" scope="0x560860ed7a40" link="0x560860ee2cf0"/>
+    <token id="0x560860ee23a0" file="TCPEchoClient.c" linenr="21" column="7" str="DieWithUserMessage" scope="0x560860ed7a40" type="name" function="0x560860edcfe0" astParent="0x560860ee24a0"/>
+    <token id="0x560860ee24a0" file="TCPEchoClient.c" linenr="21" column="25" str="(" scope="0x560860ed7a40" link="0x560860ee29b0" astOperand1="0x560860ee23a0" astOperand2="0x560860ee25d0" valueType-type="void" valueType-reference="None"/>
+    <token id="0x560860ee2570" file="TCPEchoClient.c" linenr="21" column="26" str="&quot;getaddrinfo() failed&quot;" scope="0x560860ed7a40" type="string" strlen="20" values="0x560860ef6b60" astParent="0x560860ee25d0" valueType-type="char" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="0x560860ee25d0" file="TCPEchoClient.c" linenr="21" column="48" str="," scope="0x560860ed7a40" astParent="0x560860ee24a0" astOperand1="0x560860ee2570" astOperand2="0x560860ee2750"/>
+    <token id="0x560860ee26f0" file="TCPEchoClient.c" linenr="21" column="50" str="gai_strerror" scope="0x560860ed7a40" type="name" astParent="0x560860ee2750"/>
+    <token id="0x560860ee2750" file="TCPEchoClient.c" linenr="21" column="62" str="(" scope="0x560860ed7a40" link="0x560860ee28b0" astParent="0x560860ee25d0" astOperand1="0x560860ee26f0" astOperand2="0x560860ee2850"/>
+    <token id="0x560860ee2850" file="TCPEchoClient.c" linenr="21" column="63" str="rtnVal" scope="0x560860ed7a40" type="name" varId="13" variable="0x560860ed82b0" values="0x560860edad30" astParent="0x560860ee2750" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee28b0" file="TCPEchoClient.c" linenr="21" column="69" str=")" scope="0x560860ed7a40" link="0x560860ee2750"/>
+    <token id="0x560860ee29b0" file="TCPEchoClient.c" linenr="21" column="70" str=")" scope="0x560860ed7a40" link="0x560860ee24a0"/>
+    <token id="0x560860ee2a10" file="TCPEchoClient.c" linenr="21" column="71" str=";" scope="0x560860ed7a40"/>
+    <token id="0x560860ee2cf0" file="TCPEchoClient.c" linenr="21" column="0" str="}" scope="0x560860ed7a40" link="0x560860ee5fb0"/>
+    <token id="0x560860ee2b10" file="TCPEchoClient.c" linenr="23" column="4" str="int" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860ed6b20" file="TCPEchoClient.c" linenr="23" column="8" str="sock" scope="0x560860ed7880" type="name" varId="14" variable="0x560860ed9880" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee2c00" file="TCPEchoClient.c" linenr="23" column="13" str=";" scope="0x560860ed7880" isSplittedVarDeclEq="true"/>
+    <token id="0x560860ed71c0" file="TCPEchoClient.c" linenr="23" column="8" str="sock" scope="0x560860ed7880" type="name" varId="14" variable="0x560860ed9880" astParent="0x560860ed72b0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ed72b0" file="TCPEchoClient.c" linenr="23" column="13" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" values="0x560860ef70f0" astOperand1="0x560860ed71c0" astOperand2="0x560860ee2d50" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee2d50" file="TCPEchoClient.c" linenr="23" column="16" str="-1" scope="0x560860ed7880" type="number" isInt="true" values="0x560860ef6cc0" astParent="0x560860ed72b0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee2e40" file="TCPEchoClient.c" linenr="23" column="17" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee2f30" file="TCPEchoClient.c" linenr="24" column="4" str="for" scope="0x560860ed7880" type="name" astParent="0x560860ee2f90"/>
+    <token id="0x560860ee2f90" file="TCPEchoClient.c" linenr="24" column="8" str="(" scope="0x560860ed7880" link="0x560860ee3b90" astOperand1="0x560860ee2f30" astOperand2="0x560860ee34b0"/>
+    <token id="0x560860ee3090" file="TCPEchoClient.c" linenr="24" column="9" str="struct" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860ee30f0" file="TCPEchoClient.c" linenr="24" column="16" str="addrinfo" scope="0x560860ed7880" type="name"/>
+    <token id="0x560860ee31f0" file="TCPEchoClient.c" linenr="24" column="25" str="*" scope="0x560860ed7880" type="op" isArithmeticalOp="true"/>
+    <token id="0x560860ee3250" file="TCPEchoClient.c" linenr="24" column="26" str="addr" scope="0x560860ed7880" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee3350" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee3350" file="TCPEchoClient.c" linenr="24" column="31" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" astParent="0x560860ee34b0" astOperand1="0x560860ee3250" astOperand2="0x560860ee33b0" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee33b0" file="TCPEchoClient.c" linenr="24" column="33" str="servAddr" scope="0x560860ed7880" type="name" varId="12" variable="0x560860ed81d0" astParent="0x560860ee3350" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee34b0" file="TCPEchoClient.c" linenr="24" column="41" str=";" scope="0x560860ed7880" astParent="0x560860ee2f90" astOperand1="0x560860ee3350" astOperand2="0x560860ee3700"/>
+    <token id="0x560860ee3510" file="TCPEchoClient.c" linenr="24" column="43" str="addr" scope="0x560860ed7880" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee3610" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee3610" file="TCPEchoClient.c" linenr="24" column="48" str="!=" scope="0x560860ed7880" type="op" isComparisonOp="true" astParent="0x560860ee3700" astOperand1="0x560860ee3510" astOperand2="0x560860ed8780" valueType-type="bool" valueType-reference="None"/>
+    <token id="0x560860ed8780" file="TCPEchoClient.c" linenr="24" column="51" str="NULL" scope="0x560860ed7880" type="name" values="0x560860ef6f70" astParent="0x560860ee3610"/>
+    <token id="0x560860ee3700" file="TCPEchoClient.c" linenr="24" column="55" str=";" scope="0x560860ed7880" astParent="0x560860ee34b0" astOperand1="0x560860ee3610" astOperand2="0x560860ee3850"/>
+    <token id="0x560860ee37f0" file="TCPEchoClient.c" linenr="24" column="57" str="addr" scope="0x560860ed7880" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee3850" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee3850" file="TCPEchoClient.c" linenr="24" column="62" str="=" scope="0x560860ed7880" type="op" isAssignmentOp="true" astParent="0x560860ee3700" astOperand1="0x560860ee37f0" astOperand2="0x560860ee3a30" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee3940" file="TCPEchoClient.c" linenr="24" column="64" str="addr" scope="0x560860ed7880" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee3a30" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee3a30" file="TCPEchoClient.c" linenr="24" column="68" str="." scope="0x560860ed7880" astParent="0x560860ee3850" astOperand1="0x560860ee3940" astOperand2="0x560860ee3a90" originalName="->"/>
+    <token id="0x560860ee3a90" file="TCPEchoClient.c" linenr="24" column="70" str="ai_next" scope="0x560860ed7880" type="name" varId="16" astParent="0x560860ee3a30"/>
+    <token id="0x560860ee3b90" file="TCPEchoClient.c" linenr="24" column="77" str=")" scope="0x560860ed7880" link="0x560860ee2f90"/>
+    <token id="0x560860ee3bf0" file="TCPEchoClient.c" linenr="25" column="4" str="{" scope="0x560860ed7bd0" link="0x560860ee6210"/>
+    <token id="0x560860ee3cf0" file="TCPEchoClient.c" linenr="27" column="7" str="sock" scope="0x560860ed7bd0" type="name" varId="14" variable="0x560860ed9880" astParent="0x560860ee3d50" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee3d50" file="TCPEchoClient.c" linenr="27" column="12" str="=" scope="0x560860ed7bd0" type="op" isAssignmentOp="true" astOperand1="0x560860ee3cf0" astOperand2="0x560860ee3eb0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee3e50" file="TCPEchoClient.c" linenr="27" column="14" str="socket" scope="0x560860ed7bd0" type="name" astParent="0x560860ee3eb0"/>
+    <token id="0x560860ee3eb0" file="TCPEchoClient.c" linenr="27" column="20" str="(" scope="0x560860ed7bd0" link="0x560860ee4700" astParent="0x560860ee3d50" astOperand1="0x560860ee3e50" astOperand2="0x560860ed4b70"/>
+    <token id="0x560860ee3fb0" file="TCPEchoClient.c" linenr="27" column="21" str="addr" scope="0x560860ed7bd0" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee4010" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee4010" file="TCPEchoClient.c" linenr="27" column="25" str="." scope="0x560860ed7bd0" astParent="0x560860ee4170" astOperand1="0x560860ee3fb0" astOperand2="0x560860ee4110" originalName="->"/>
+    <token id="0x560860ee4110" file="TCPEchoClient.c" linenr="27" column="27" str="ai_family" scope="0x560860ed7bd0" type="name" varId="17" astParent="0x560860ee4010"/>
+    <token id="0x560860ee4170" file="TCPEchoClient.c" linenr="27" column="36" str="," scope="0x560860ed7bd0" astParent="0x560860ed4b70" astOperand1="0x560860ee4010" astOperand2="0x560860ee42d0"/>
+    <token id="0x560860ee4270" file="TCPEchoClient.c" linenr="27" column="38" str="addr" scope="0x560860ed7bd0" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee42d0" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee42d0" file="TCPEchoClient.c" linenr="27" column="42" str="." scope="0x560860ed7bd0" astParent="0x560860ee4170" astOperand1="0x560860ee4270" astOperand2="0x560860ee43d0" originalName="->"/>
+    <token id="0x560860ee43d0" file="TCPEchoClient.c" linenr="27" column="44" str="ai_socktype" scope="0x560860ed7bd0" type="name" varId="18" astParent="0x560860ee42d0"/>
+    <token id="0x560860ed4b70" file="TCPEchoClient.c" linenr="27" column="55" str="," scope="0x560860ed7bd0" astParent="0x560860ee3eb0" astOperand1="0x560860ee4170" astOperand2="0x560860ee4520"/>
+    <token id="0x560860ee4430" file="TCPEchoClient.c" linenr="27" column="57" str="addr" scope="0x560860ed7bd0" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee4520" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee4520" file="TCPEchoClient.c" linenr="27" column="61" str="." scope="0x560860ed7bd0" astParent="0x560860ed4b70" astOperand1="0x560860ee4430" astOperand2="0x560860ee4610" originalName="->"/>
+    <token id="0x560860ee4610" file="TCPEchoClient.c" linenr="27" column="63" str="ai_protocol" scope="0x560860ed7bd0" type="name" varId="19" astParent="0x560860ee4520"/>
+    <token id="0x560860ee4700" file="TCPEchoClient.c" linenr="27" column="74" str=")" scope="0x560860ed7bd0" link="0x560860ee3eb0"/>
+    <token id="0x560860ee47f0" file="TCPEchoClient.c" linenr="27" column="75" str=";" scope="0x560860ed7bd0"/>
+    <token id="0x560860ee4850" file="TCPEchoClient.c" linenr="28" column="7" str="if" scope="0x560860ed7bd0" type="name" astParent="0x560860ee4950"/>
+    <token id="0x560860ee4950" file="TCPEchoClient.c" linenr="28" column="10" str="(" scope="0x560860ed7bd0" link="0x560860ee4c10" astOperand1="0x560860ee4850" astOperand2="0x560860ee4ab0"/>
+    <token id="0x560860ee49b0" file="TCPEchoClient.c" linenr="28" column="11" str="sock" scope="0x560860ed7bd0" type="name" varId="14" variable="0x560860ed9880" astParent="0x560860ee4ab0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee4ab0" file="TCPEchoClient.c" linenr="28" column="16" str="&lt;" scope="0x560860ed7bd0" type="op" isComparisonOp="true" astParent="0x560860ee4950" astOperand1="0x560860ee49b0" astOperand2="0x560860ee4b10" valueType-type="bool" valueType-reference="None"/>
+    <token id="0x560860ee4b10" file="TCPEchoClient.c" linenr="28" column="18" str="0" scope="0x560860ed7bd0" type="number" isInt="true" values="0x560860ef7150" astParent="0x560860ee4ab0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee4c10" file="TCPEchoClient.c" linenr="28" column="19" str=")" scope="0x560860ed7bd0" link="0x560860ee4950"/>
+    <token id="0x560860ed5850" file="TCPEchoClient.c" linenr="28" column="0" str="{" scope="0x560860ed7dd0" link="0x560860ed5940"/>
+    <token id="0x560860ee4c70" file="TCPEchoClient.c" linenr="29" column="10" str="continue" scope="0x560860ed7dd0" type="name"/>
+    <token id="0x560860ee4d70" file="TCPEchoClient.c" linenr="29" column="18" str=";" scope="0x560860ed7dd0"/>
+    <token id="0x560860ed5940" file="TCPEchoClient.c" linenr="29" column="0" str="}" scope="0x560860ed7dd0" link="0x560860ed5850"/>
+    <token id="0x560860ee4dd0" file="TCPEchoClient.c" linenr="32" column="7" str="if" scope="0x560860ed7bd0" type="name" astParent="0x560860ee4ed0"/>
+    <token id="0x560860ee4ed0" file="TCPEchoClient.c" linenr="32" column="10" str="(" scope="0x560860ed7bd0" link="0x560860ee58e0" astOperand1="0x560860ee4dd0" astOperand2="0x560860ee5700"/>
+    <token id="0x560860ee4f30" file="TCPEchoClient.c" linenr="32" column="11" str="connect" scope="0x560860ed7bd0" type="name" astParent="0x560860ee5030"/>
+    <token id="0x560860ee5030" file="TCPEchoClient.c" linenr="32" column="18" str="(" scope="0x560860ed7bd0" link="0x560860ee5610" astParent="0x560860ee5700" astOperand1="0x560860ee4f30" astOperand2="0x560860ee5450"/>
+    <token id="0x560860ee5090" file="TCPEchoClient.c" linenr="32" column="19" str="sock" scope="0x560860ed7bd0" type="name" varId="14" variable="0x560860ed9880" values="0x560860ed5f10" astParent="0x560860ee5190" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee5190" file="TCPEchoClient.c" linenr="32" column="23" str="," scope="0x560860ed7bd0" astParent="0x560860ee5450" astOperand1="0x560860ee5090" astOperand2="0x560860ee52f0"/>
+    <token id="0x560860ee51f0" file="TCPEchoClient.c" linenr="32" column="25" str="addr" scope="0x560860ed7bd0" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee52f0" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee52f0" file="TCPEchoClient.c" linenr="32" column="29" str="." scope="0x560860ed7bd0" astParent="0x560860ee5190" astOperand1="0x560860ee51f0" astOperand2="0x560860ee5350" originalName="->"/>
+    <token id="0x560860ee5350" file="TCPEchoClient.c" linenr="32" column="31" str="ai_addr" scope="0x560860ed7bd0" type="name" varId="20" astParent="0x560860ee52f0"/>
+    <token id="0x560860ee5450" file="TCPEchoClient.c" linenr="32" column="38" str="," scope="0x560860ed7bd0" astParent="0x560860ee5030" astOperand1="0x560860ee5190" astOperand2="0x560860ee55b0"/>
+    <token id="0x560860ee54b0" file="TCPEchoClient.c" linenr="32" column="40" str="addr" scope="0x560860ed7bd0" type="name" varId="15" variable="0x560860ed73b0" astParent="0x560860ee55b0" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee55b0" file="TCPEchoClient.c" linenr="32" column="44" str="." scope="0x560860ed7bd0" astParent="0x560860ee5450" astOperand1="0x560860ee54b0" astOperand2="0x560860efa010" originalName="->"/>
+    <token id="0x560860efa010" file="TCPEchoClient.c" linenr="32" column="46" str="ai_addrlen" scope="0x560860ed7bd0" type="name" varId="21" astParent="0x560860ee55b0"/>
+    <token id="0x560860ee5610" file="TCPEchoClient.c" linenr="32" column="56" str=")" scope="0x560860ed7bd0" link="0x560860ee5030"/>
+    <token id="0x560860ee5700" file="TCPEchoClient.c" linenr="32" column="58" str="==" scope="0x560860ed7bd0" type="op" isComparisonOp="true" astParent="0x560860ee4ed0" astOperand1="0x560860ee5030" astOperand2="0x560860ee57f0" valueType-type="bool" valueType-reference="None"/>
+    <token id="0x560860ee57f0" file="TCPEchoClient.c" linenr="32" column="61" str="0" scope="0x560860ed7bd0" type="number" isInt="true" values="0x560860ef87f0" astParent="0x560860ee5700" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee58e0" file="TCPEchoClient.c" linenr="32" column="62" str=")" scope="0x560860ed7bd0" link="0x560860ee4ed0"/>
+    <token id="0x560860ed5a30" file="TCPEchoClient.c" linenr="32" column="0" str="{" scope="0x560860ed7f60" link="0x560860ed5b20"/>
+    <token id="0x560860ee59d0" file="TCPEchoClient.c" linenr="33" column="10" str="break" scope="0x560860ed7f60" type="name"/>
+    <token id="0x560860ee5a30" file="TCPEchoClient.c" linenr="33" column="15" str=";" scope="0x560860ed7f60"/>
+    <token id="0x560860ed5b20" file="TCPEchoClient.c" linenr="33" column="0" str="}" scope="0x560860ed7f60" link="0x560860ed5a30"/>
+    <token id="0x560860ee5b30" file="TCPEchoClient.c" linenr="35" column="7" str="close" scope="0x560860ed7bd0" type="name" astParent="0x560860ee5b90"/>
+    <token id="0x560860ee5b90" file="TCPEchoClient.c" linenr="35" column="12" str="(" scope="0x560860ed7bd0" link="0x560860ee5cf0" astOperand1="0x560860ee5b30" astOperand2="0x560860ee5c90"/>
+    <token id="0x560860ee5c90" file="TCPEchoClient.c" linenr="35" column="13" str="sock" scope="0x560860ed7bd0" type="name" varId="14" variable="0x560860ed9880" astParent="0x560860ee5b90" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee5cf0" file="TCPEchoClient.c" linenr="35" column="17" str=")" scope="0x560860ed7bd0" link="0x560860ee5b90"/>
+    <token id="0x560860ee5df0" file="TCPEchoClient.c" linenr="35" column="18" str=";" scope="0x560860ed7bd0"/>
+    <token id="0x560860ee5e50" file="TCPEchoClient.c" linenr="36" column="7" str="sock" scope="0x560860ed7bd0" type="name" varId="14" variable="0x560860ed9880" astParent="0x560860ee5f50" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee5f50" file="TCPEchoClient.c" linenr="36" column="12" str="=" scope="0x560860ed7bd0" type="op" isAssignmentOp="true" values="0x560860ef6b00" astOperand1="0x560860ee5e50" astOperand2="0x560860ee60b0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee60b0" file="TCPEchoClient.c" linenr="36" column="15" str="-1" scope="0x560860ed7bd0" type="number" isInt="true" values="0x560860ed96c0" astParent="0x560860ee5f50" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee6110" file="TCPEchoClient.c" linenr="36" column="16" str=";" scope="0x560860ed7bd0"/>
+    <token id="0x560860ee6210" file="TCPEchoClient.c" linenr="37" column="4" str="}" scope="0x560860ed7bd0" link="0x560860ee3bf0"/>
+    <token id="0x560860ee6270" file="TCPEchoClient.c" linenr="39" column="4" str="freeaddrinfo" scope="0x560860ed7880" type="name" astParent="0x560860ee6370"/>
+    <token id="0x560860ee6370" file="TCPEchoClient.c" linenr="39" column="16" str="(" scope="0x560860ed7880" link="0x560860ee64d0" astOperand1="0x560860ee6270" astOperand2="0x560860ee63d0"/>
+    <token id="0x560860ee63d0" file="TCPEchoClient.c" linenr="39" column="17" str="servAddr" scope="0x560860ed7880" type="name" varId="12" variable="0x560860ed81d0" astParent="0x560860ee6370" valueType-type="record" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0x560860ee64d0" file="TCPEchoClient.c" linenr="39" column="25" str=")" scope="0x560860ed7880" link="0x560860ee6370"/>
+    <token id="0x560860ee6530" file="TCPEchoClient.c" linenr="39" column="26" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee6630" file="TCPEchoClient.c" linenr="40" column="4" str="return" scope="0x560860ed7880" type="name" astOperand1="0x560860ee6690" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee6690" file="TCPEchoClient.c" linenr="40" column="11" str="sock" scope="0x560860ed7880" type="name" varId="14" variable="0x560860ed9880" values="0x560860eecda0" astParent="0x560860ee6630" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0x560860ee6790" file="TCPEchoClient.c" linenr="40" column="15" str=";" scope="0x560860ed7880"/>
+    <token id="0x560860ee67f0" file="TCPEchoClient.c" linenr="41" column="1" str="}" scope="0x560860ed7880" link="0x560860edf830"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0x560860ed76f0" type="Global">
+      <functionList>
+        <function id="0x560860edcfe0" token="0" tokenDef="0x560860edd850" name="DieWithUserMessage" type="Function">
+          <arg nr="1" variable="0x560860ed9960"/>
+          <arg nr="2" variable="0x560860ed9a40"/>
+        </function>
+        <function id="0x560860edcf30" token="0" tokenDef="0x560860ed8ca0" name="DieWithSystemMessage" type="Function">
+          <arg nr="1" variable="0x560860ed9b20"/>
+        </function>
+        <function id="0x560860edd230" token="0" tokenDef="0x560860eda600" name="PrintSocketAddress" type="Function">
+          <arg nr="1" variable="0x560860ed9c00"/>
+          <arg nr="2" variable="0x560860ed9ce0"/>
+        </function>
+        <function id="0x560860edd180" token="0x560860edf040" tokenDef="0x560860edf040" name="SetupTCPClientSocket" type="Function">
+          <arg nr="1" variable="0x560860ed9dc0"/>
+          <arg nr="2" variable="0x560860ed9ea0"/>
+        </function>
+      </functionList>
+    </scope>
+    <scope id="0x560860ed7880" type="Function" className="SetupTCPClientSocket" bodyStart="0x560860edf830" bodyEnd="0x560860ee67f0" nestedIn="0x560860ed76f0" function="0x560860edd180">
+      <varlist>
+        <var id="0x560860ed80f0"/>
+        <var id="0x560860ed81d0"/>
+        <var id="0x560860ed82b0"/>
+        <var id="0x560860ed9880"/>
+      </varlist>
+    </scope>
+    <scope id="0x560860ed7a40" type="If" bodyStart="0x560860ee5fb0" bodyEnd="0x560860ee2cf0" nestedIn="0x560860ed7880"/>
+    <scope id="0x560860ed7bd0" type="For" bodyStart="0x560860ee3bf0" bodyEnd="0x560860ee6210" nestedIn="0x560860ed7880">
+      <varlist>
+        <var id="0x560860ed73b0"/>
+      </varlist>
+    </scope>
+    <scope id="0x560860ed7dd0" type="If" bodyStart="0x560860ed5850" bodyEnd="0x560860ed5940" nestedIn="0x560860ed7bd0"/>
+    <scope id="0x560860ed7f60" type="If" bodyStart="0x560860ed5a30" bodyEnd="0x560860ed5b20" nestedIn="0x560860ed7bd0"/>
+  </scopes>
+  <variables>
+    <var id="0x560860ed73b0" nameToken="0x560860ee3250" typeStartToken="0x560860ee30f0" typeEndToken="0x560860ee31f0" access="Local" scope="0x560860ed7bd0" constness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed80f0" nameToken="0x560860edfa70" typeStartToken="0x560860edf980" typeEndToken="0x560860edf980" access="Local" scope="0x560860ed7880" constness="0" isArray="false" isClass="true" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed81d0" nameToken="0x560860ee1320" typeStartToken="0x560860ed5240" typeEndToken="0x560860ee1230" access="Local" scope="0x560860ed7880" constness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed82b0" nameToken="0x560860ee1580" typeStartToken="0x560860ee1480" typeEndToken="0x560860ee1480" access="Local" scope="0x560860ed7880" constness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9880" nameToken="0x560860ed6b20" typeStartToken="0x560860ee2b10" typeEndToken="0x560860ee2b10" access="Local" scope="0x560860ed7880" constness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9960" nameToken="0x560860eebe50" typeStartToken="0x560860edd730" typeEndToken="0x560860eebae0" access="Argument" scope="0" constness="1" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9a40" nameToken="0x560860ed4230" typeStartToken="0x560860ed8f10" typeEndToken="0x560860ed41d0" access="Argument" scope="0" constness="1" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9b20" nameToken="0x560860edb530" typeStartToken="0x560860edb320" typeEndToken="0x560860edb410" access="Argument" scope="0" constness="1" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9c00" nameToken="0x560860edb0e0" typeStartToken="0x560860ede8f0" typeEndToken="0x560860ede9e0" access="Argument" scope="0" constness="1" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9ce0" nameToken="0x560860eded10" typeStartToken="0x560860edeb30" typeEndToken="0x560860edec20" access="Argument" scope="0" constness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9dc0" nameToken="0x560860edf3a0" typeStartToken="0x560860edaf00" typeEndToken="0x560860edf2b0" access="Argument" scope="0x560860ed7880" constness="1" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="0x560860ed9ea0" nameToken="0x560860edf740" typeStartToken="0x560860edf5e0" typeEndToken="0x560860edf640" access="Argument" scope="0x560860ed7880" constness="1" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+  </variables>
+  <valueflow>
+    <values id="0x560860ef8970">
+      <value lifetime="0x560860edfdb0" lifetime-scope="Local" lifetime-kind="Address" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="0x560860ef6d60">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ed93d0">
+      <value intvalue="18446744073709551615" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="0x560860ed9140">
+      <value lifetime="0x560860ee1bb0" lifetime-scope="Local" lifetime-kind="Address" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="0x560860eec8b0">
+      <value lifetime="0x560860ee1d70" lifetime-scope="Local" lifetime-kind="Address" bound="Point" possible="true" path="0"/>
+      <value uninit="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ed9790">
+      <value uninit="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ef6f10">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ef6b60">
+      <value tokvalue="0x560860ee2570" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860edad30">
+      <value intvalue="0" bound="Point" condition-line="20" impossible="true" path="0"/>
+    </values>
+    <values id="0x560860ef70f0">
+      <value intvalue="-1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ef6cc0">
+      <value intvalue="-1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ef6f70">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ef7150">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ed5f10">
+      <value intvalue="-1" bound="Upper" condition-line="28" impossible="true" path="0"/>
+      <value intvalue="0" bound="Lower" condition-line="28" possible="true" path="0"/>
+    </values>
+    <values id="0x560860ef87f0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ef6b00">
+      <value intvalue="-1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860ed96c0">
+      <value intvalue="-1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="0x560860eecda0">
+      <value intvalue="-1" bound="Point" possible="true" path="0"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>
